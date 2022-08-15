@@ -4,11 +4,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
 # Naming our Ingress
-name: node-app-ingress
-labels:
   name: node-app-ingress
+  labels:
+    name: node-app-ingress
 spec:
-rules:
+  ingressClassName: local
+  rules:
   # Defining rules such as
   # Providing the cluster name, DNS_NAME (where we want this image to be visible)
   - host: demo-node.prod.viettq.com
